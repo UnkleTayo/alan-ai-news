@@ -10,7 +10,8 @@ const App = () => {
     alanBtn({
       key: alanKey,
       onCommand: ({ command, articles }) => {
-        if (command === 'newsHeadline') {
+        if (command === 'newHeadlines') {
+          console.log(articles);
           setNewsArticles(articles);
         }
       },
