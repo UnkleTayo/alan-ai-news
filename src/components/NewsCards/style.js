@@ -4,7 +4,7 @@ export default makeStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
     width: '100%',
     height: '45vh',
@@ -17,16 +17,13 @@ export default makeStyles({
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
-    margin: 5,
+    margin: '5px',
   },
   container: {
-    // padding: '0 5%',
-    // width: '100%',
     margin: 'auto',
-
+    width: '80%',
     display: 'flex',
     flexDirection: 'row',
-    // justifyContent: 'space-around',
     alignItems: 'center',
   },
 });
