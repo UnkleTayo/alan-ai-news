@@ -10,11 +10,11 @@ import {
 } from '@material-ui/core';
 
 import useStyles from './styles';
-import classNames from 'classnames';
+
 const NewsCard = ({
   article: { description, publishedAt, source, title, url, urlToImage },
-  i,
   activeArticle,
+  i,
 }) => {
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
@@ -35,13 +35,11 @@ const NewsCard = ({
       scrollToRef(elRefs[activeArticle]);
     }
   }, [i, activeArticle, elRefs]);
+
   return (
     <Card
       ref={elRefs[i]}
-      className={classNames(
-        classes.card,
-        activeArticle === i ? classes.activeCard : null
-      )}
+      className={activeArticle === i ? classes.activeCard : classes.card}
     >
       <CardActionArea href={url} target='_blank'>
         <CardMedia
@@ -50,12 +48,12 @@ const NewsCard = ({
             urlToImage ||
             'https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png'
           }
+          title={title}
         />
         <div className={classes.details}>
           <Typography variant='body2' color='textSecondary' component='h2'>
             {new Date(publishedAt).toDateString()}
           </Typography>
-
           <Typography variant='body2' color='textSecondary' component='h2'>
             {source.name}
           </Typography>
@@ -69,7 +67,7 @@ const NewsCard = ({
           {title}
         </Typography>
         <CardContent>
-          <Typography variant='body2' component='p' color='textSecondary'>
+          <Typography variant='body2' color='textSecondary' component='p'>
             {description}
           </Typography>
         </CardContent>
