@@ -26,7 +26,7 @@ const infoCards = [
   },
 ];
 
-const NewsCards = ({ articles }) => {
+const NewsCards = ({ articles, activeArticle }) => {
   const classes = useStyles();
   if (!articles.length) {
     return (
@@ -69,7 +69,7 @@ const NewsCards = ({ articles }) => {
       <Grid className={classes.container} container alignItems='stretch'>
         {articles.map((article, i) => (
           <Grid item xs={1} sm={6} lg={3} style={{ display: 'flex' }}>
-            <NewsCard article={article} i={i} />
+            <NewsCard article={article} i={i} activeArticle={activeArticle} />
           </Grid>
         ))}
       </Grid>
